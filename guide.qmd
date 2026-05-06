@@ -69,5 +69,52 @@ Since ammeding re-writes the commit history a normal `git push` would be rejecte
 
 ![GitHub showing data folder on testbranch](images/step4-github.png)
 
+## Step 5: Create a Conflicting edit on main 
+
+Switched back to `main` branch using `git checkout main`. A new section was added to `example.qmd` which is the same location as section added on `testbranch`, however with different content. This will intentionally create a conflict that will appear while merging `testbranch` into `main`.
+
+The changes were staged/added using `git add example.qmd`, commited with a descriptive message and pushed to remote using `git push origin main`
+
+![Terminal showing commit and push on main](images/step5-terminal.png)
+![GitHub showing conflicting commit on main](images/step5-github.png)
+
+## Step 6: Merge Testbranch into Main and Resolve Conflict 
+
+Both the branches contained different edits but at the same section of `example.qmd`. By merging `testbranch` into `main` using `git merge testbranch` caused a merge conflict. Git cannot decide which version to keep when same lines are edited on two different branches
+
+The conflict markers (`<<<<<<<`, `=======`, `>>>>>>>`) were visible inside the `example.qmd` showcasing both versions( version 1: main, version 2: testbranch). The conflict was resolved by manually editing the file, removing conflict markers and replacing the versions with a single clean section. The resolved files were then stagged, commited and pushed to remote repository 
+
+![Terminal showing merge conflict](images/step6-conflict.png)
+
+![RStudio showing conflict markers in example.qmd](images/step6-conflict-file.png)
+
+![Terminal showing resolved commit and push](images/step6-resolved.png)
+
+![GitHub showing merge conflict resolved commit](images/step6-github.png)
+
+## Step 7: Tag Commit v1.0 on Main 
+
+Created an annoted tag on `main` called as `v1.0` using `git tag -a`. Annoted tags stores extra metadata like the mail, date and tagger name makinmg it more descriptive and informative than lightweight tags. This tag marks the point were merge conflict was resolved. The tag was pushed to remote repository using `git push origin v1.0` 
+
+![Terminal showing tag creation and push](images/step7-terminal.png)
+
+![GitHub showing v1.0 tag](images/step7-github.png)
+
+## Step 8: Delete testbranch Locally and on Remote
+
+`testbranch` was successfully deleted when it was no longer needed using `git branch -d` locally the `-d` flag ensure the branch is safely deleted. The branch `testbranch` was also deleted from remote repository since it was no longer needed in remote as well using `git push origin --delete testbranch`. This keeps the remote repository clean and does not create any confusions later 
+
+![Terminal showing branch deletion locally and on remote](images/step8-terminal.png)
+
+![GitHub showing only main branch remaining](images/step8-github.png)
+
+## Step 9: Commit log in Condensed Form
+
+`git log --oneline` was used in order to display all the commits in condensed form. The command displays each commit in a single line with hash code and commit message, making it easy to get a glimpse of the entire project history. The output also shows were `HEAD`, `main`, `origin/main`, and the `v1.0` tag are pointing 
+
+![Terminal showing condensed commit log](images/step9-terminal.png)
+
+
+
 
 

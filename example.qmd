@@ -19,4 +19,11 @@ This is a simple Quarto document created for the ETC5513 git guide assignment.
 
 This section was added to resolve merge conflict between main and testbranch
 
+## A Simple plot 
+
+```{r}
+plot(cars)
+```
+
+
 
