@@ -15,3 +15,7 @@ This is a simple Quarto document created for the ETC5513 git guide assignment.
 1+1
 ```
 
+## New Section on TestBranch
+
+This section was added on TestBranch to demonstrate branching in Git
+
