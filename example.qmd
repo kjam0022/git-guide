@@ -17,4 +17,4 @@ This is a simple Quarto document created for the ETC5513 git guide assignment.
 
 ## A New Section on Main
 
-This section was added on Main and will confilict with TestBranch
+This section was added on Main and will Conflict with TestBranch
