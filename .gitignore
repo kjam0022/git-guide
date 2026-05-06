@@ -1,0 +1,7 @@
+.Rproj.user/
+.DS_Store
+*.html
+example_files/
+guide.pdf
+*.tex
+*.log
