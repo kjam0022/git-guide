@@ -115,6 +115,16 @@ Created an annoted tag on `main` called as `v1.0` using `git tag -a`. Annoted ta
 ![Terminal showing condensed commit log](images/step9-terminal.png)
 
 
+## Step 10: Add the Plot, Commit and Undo the Commit
+
+A new section containing a simple plot was added to `example.qmd` using `plot(cars)` The changes were staged/added and commited using `git add` and `git commit`. 
+
+To demonstrate undoing a commit without losing local changes we used `git reset --soft HEAD~1`. This command points back one commit but keeps the changes staged. This is useful when you commit to early and want to make changes again before recommitting 
+
+To confirm we used command `git status`, `example.qmd` shows that changes are modified and staged after the reset and plot as not lost 
+
+![Terminal showing commit and soft reset](images/step10-terminal.png)
+
 
 
 
