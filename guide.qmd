@@ -22,5 +22,52 @@ source code and the rendered output side by side.
 
 ![RStudio showing example.qmd and the rendered HTML output](images/step1.png)
 
+## Step 2: Initialise Git and Push to GitHub
+
+The `git-guide` project folder was initialised as a Git repository using 
+`git init`. Before staging any files, a `.gitignore` file was created to 
+prevent unnecessary files such as `.Rproj.user/`, `.DS_Store`, and rendered 
+output files from being tracked by Git. This keeps the repository clean and 
+focused on source files only.
+
+All relevant files were staged using `git add .` and committed with a 
+descriptive message. A new empty repository called `git-guide` was then 
+created on GitHub. The local repository was linked to the remote using 
+`git remote add origin`, and the commits were pushed using 
+`git push -u origin main`. The `-u` flag sets the upstream so future pushes 
+only require `git push`.
+
+![Terminal showing git init and first commit](images/step2-terminal-1.png)
+
+![Terminal showing git add and cleaned commit](images/step2-terminal-2.png)
+
+![Terminal showing git remote add and git push](images/step2-terminal-3.png)
+
+![GitHub repository showing files after first push](images/step2-github.png)
+
+## Step 3: Create testbranch and Push changes
+
+A new branch called `testbranch` was created and switched using `git checkout -b testbranch`. The `-b` creates the branch and switches into it in one single command. Branching allows us to work on changes independently without affecting the `main` branch
+
+`example.qmd` was modified by adding a new section. The changes were staged/added using `git add example.qmd` and commited with a descriptive message which explains the modification. The branch was pushed to the remote repository using `git push -u origin testbranch` to make it visible on github
+
+![Terminal showing branch creation, commit and push](images/step3-terminal.png)
+
+![GitHub showing testbranch was pushed](images/step3-github.png)
+
+![GitHub showing testbranch listed under branches](images/step3-github-branch.png)
+
+
+## Step 4: Add Data Folder and Amend Previous Commit
+
+A folder called `data` was created in the project directory and the data files from Assignment 1 were added to it. Instead of commenting and staging this change, we used `git commit --amend` to add the data folder in our previous commit. This is useful when you realise you forgot to include a file or want to slightly edit the
+last commit or made a typo in the last commit and want to keep the history clean.
+
+Since ammeding re-writes the commit history a normal `git push` would be rejected by remote. Thus `git push --force` was used to overwrite the old commit on the remote with the appended one. It is safe to do on a branch where no one else is working. 
+
+![Terminal showing git add, amend and force push](images/step4-terminal.png)
+
+![GitHub showing data folder on testbranch](images/step4-github.png)
+
 
 
